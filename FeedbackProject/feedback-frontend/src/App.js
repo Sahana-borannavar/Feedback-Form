@@ -35,7 +35,7 @@ function App() {
       await axios.post("http://localhost:5000/feedback", formData);
       setSuccess("Feedback submitted successfully!");
       setFormData({ name: "", email: "", message: "" });
-      fetchFeedbacks();
+      fetchFeedbacks(); // refresh feedbacks
       setTimeout(() => setSuccess(""), 3000);
     } catch (error) {
       console.error("Submission failed:", error);
@@ -94,3 +94,5 @@ function App() {
 }
 
 export default App;
+
+
