@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: feedback-fullstack-app
+    ensv: python
+    plan: free
+    buildCommand: |
+      cd feedback-frontend && npm install && npm run build
+    startCommand: gunicorn app:app
+    workingDir: feedback-backend
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+    runtime: python
