@@ -5,6 +5,7 @@ services:
     plan: free
     buildCommand: |
       cd feedback-frontend && npm install && npm run build
+      cd ../feedback-backend && pip install -r requirements.txt
     startCommand: gunicorn app:app
     workingDir: feedback-backend
     envVars:
